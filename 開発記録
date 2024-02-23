@@ -12,3 +12,4 @@ https://www.javadrive.jp/mysql/connect/index6.html#section1
 ユーザ認証のためDjango-allauthを用いた。
 MySQLにユーザ情報が登録されていることを確認。
 管理ユーザーを作成。
+AdminサイトとMySQLのデータベースが完全に一致していることを確認！嬉しいなあ
