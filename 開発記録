@@ -1,6 +1,14 @@
-2/21 アプリ設計
-2/22 アプリ設計
-2/23 プロジェクト作成、MySQLに接続成功
+2/21 
+アプリ設計
+2/22 
+アプリ設計
+2/23 
+プロジェクト作成、MySQLに接続成功
 ※PATH設定に苦労したが以下を参考にして解決
 https://qiita.com/eiji-noguchi/items/fddd91838a2bb551a31a
 https://www.javadrive.jp/mysql/connect/index6.html#section1
+2/24 
+モデルを定義、複数ユーザーのログインや質問にユーザ情報を紐づける方法が分からないので後回しにした。できればカスタムユーザモデルを作りたい
+ユーザ認証のためDjango-allauthを用いた。
+MySQLにユーザ情報が登録されていることを確認。
+管理ユーザーを作成。
