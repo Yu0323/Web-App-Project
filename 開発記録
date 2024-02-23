@@ -1,3 +1,6 @@
 2/21 アプリ設計
 2/22 アプリ設計
 2/23 プロジェクト作成、MySQLに接続成功
+※PATH設定に苦労したが以下を参考にして解決
+https://qiita.com/eiji-noguchi/items/fddd91838a2bb551a31a
+https://www.javadrive.jp/mysql/connect/index6.html#section1
