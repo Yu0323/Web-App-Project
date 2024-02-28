@@ -1,0 +1,864 @@
+(base) PS C:\Users\physi> cd C:\django\Question_posting_site\venv
+(base) PS C:\django\Question_posting_site\venv> .site\Scripts\activate
+.site\Scripts\activate : モジュール '.site' を読み込むことができませんでした。詳細については、'Import-Module .site' を
+実行してください。
+発生場所 行:1 文字:1
++ .site\Scripts\activate
++ ~~~~~~~~~~~~~~~~~~~~~~
+    + CategoryInfo          : ObjectNotFound: (.site\Scripts\activate:String) [], CommandNotFoundException
+    + FullyQualifiedErrorId : CouldNotAutoLoadModule
+
+(base) PS C:\django\Question_posting_site\venv> \site\Scripts\activate
+\site\Scripts\activate : 用語 '\site\Scripts\activate' は、コマンドレット、関数、スクリプト ファイル、または操作可能な
+プログラムの名前として認識されません。名前が正しく記述されていることを確認し、パスが含まれている場合はそのパスが正しい
+ことを確認してから、再試行してください。
+発生場所 行:1 文字:1
++ \site\Scripts\activate
++ ~~~~~~~~~~~~~~~~~~~~~~
+    + CategoryInfo          : ObjectNotFound: (\site\Scripts\activate:String) [], CommandNotFoundException
+    + FullyQualifiedErrorId : CommandNotFoundException
+
+
+Suggestion [3,General]: コマンド \site\Scripts\activate は見つかりませんでしたが、現在の場所に存在します。Windows PowerShell は、既定では、現在の場所からコマンドを読み 込みません。このコマンドを信頼する場合は、".\\site\Scripts\activate" と入力してください。詳細については、"get-help about_Command_Precedence" と入力してヘルプを参照して ください。
+(base) PS C:\django\Question_posting_site\venv> .\site\Scripts\activate
+(site) (base) PS C:\django\Question_posting_site\venv> python manage.py runserver
+C:\Users\physi\anaconda3\python.exe: can't open file 'C:\django\Question_posting_site\venv\manage.py': [Errno 2] No such file or directory
+(site) (base) PS C:\django\Question_posting_site\venv> cd PS C:\django\Question_posting_site
+Set-Location : 引数 'C:\django\Question_posting_site' を受け入れる位置指定パラメーターが見つかりません。
+発生場所 行:1 文字:1
++ cd PS C:\django\Question_posting_site
++ ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+    + CategoryInfo          : InvalidArgument: (:) [Set-Location]、ParameterBindingException
+    + FullyQualifiedErrorId : PositionalParameterNotFound,Microsoft.PowerShell.Commands.SetLocationCommand
+
+(site) (base) PS C:\django\Question_posting_site\venv> cd C:\django\Question_posting_site
+(site) (base) PS C:\django\Question_posting_site> python manage.py runserver
+Watching for file changes with StatReloader
+Performing system checks...
+
+Exception in thread django-main-thread:
+Traceback (most recent call last):
+  File "C:\django\Question_posting_site\venv\site\lib\site-packages\django\utils\autoreload.py", line 64, in wrapper
+    fn(*args, **kwargs)
+  File "C:\django\Question_posting_site\venv\site\lib\site-packages\django\core\management\commands\runserver.py", line 134, in inner_run
+    self.check(display_num_errors=True)
+  File "C:\django\Question_posting_site\venv\site\lib\site-packages\django\core\management\base.py", line 487, in check
+    all_issues = checks.run_checks(
+  File "C:\django\Question_posting_site\venv\site\lib\site-packages\django\core\checks\registry.py", line 88, in run_checks
+    new_errors = check(app_configs=app_configs, databases=databases)
+  File "C:\django\Question_posting_site\venv\site\lib\site-packages\django\core\checks\urls.py", line 14, in check_url_config
+    return check_resolver(resolver)
+  File "C:\django\Question_posting_site\venv\site\lib\site-packages\django\core\checks\urls.py", line 24, in check_resolver
+    return check_method()
+  File "C:\django\Question_posting_site\venv\site\lib\site-packages\django\urls\resolvers.py", line 480, in check
+    for pattern in self.url_patterns:
+  File "C:\django\Question_posting_site\venv\site\lib\site-packages\django\utils\functional.py", line 49, in __get__
+    res = instance.__dict__[self.name] = self.func(instance)
+  File "C:\django\Question_posting_site\venv\site\lib\site-packages\django\urls\resolvers.py", line 696, in url_patterns
+    patterns = getattr(self.urlconf_module, "urlpatterns", self.urlconf_module)
+  File "C:\django\Question_posting_site\venv\site\lib\site-packages\django\utils\functional.py", line 49, in __get__
+    res = instance.__dict__[self.name] = self.func(instance)
+  File "C:\django\Question_posting_site\venv\site\lib\site-packages\django\urls\resolvers.py", line 689, in urlconf_module
+    return import_module(self.urlconf_name)
+  File "C:\Users\physi\anaconda3\lib\importlib\__init__.py", line 127, in import_module
+    return _bootstrap._gcd_import(name[level:], package, level)
+  File "<frozen importlib._bootstrap>", line 1030, in _gcd_import
+  File "<frozen importlib._bootstrap>", line 1007, in _find_and_load
+  File "<frozen importlib._bootstrap>", line 986, in _find_and_load_unlocked
+  File "<frozen importlib._bootstrap>", line 680, in _load_unlocked
+  File "<frozen importlib._bootstrap_external>", line 850, in exec_module
+  File "<frozen importlib._bootstrap>", line 228, in _call_with_frames_removed
+  File "C:\django\Question_posting_site\config\urls.py", line 7, in <module>
+    path('account/', include('check.urls')), #2/26追加 #ここでURLの一番目を設定する．appならsquare（広場），checkならaccount（認証）に行く！
+  File "C:\django\Question_posting_site\venv\site\lib\site-packages\django\urls\conf.py", line 38, in include
+    urlconf_module = import_module(urlconf_module)
+  File "C:\Users\physi\anaconda3\lib\importlib\__init__.py", line 127, in import_module
+    return _bootstrap._gcd_import(name[level:], package, level)
+  File "<frozen importlib._bootstrap>", line 1030, in _gcd_import
+  File "<frozen importlib._bootstrap>", line 1007, in _find_and_load
+  File "<frozen importlib._bootstrap>", line 986, in _find_and_load_unlocked
+  File "<frozen importlib._bootstrap>", line 680, in _load_unlocked
+  File "<frozen importlib._bootstrap_external>", line 850, in exec_module
+  File "<frozen importlib._bootstrap>", line 228, in _call_with_frames_removed
+  File "C:\django\Question_posting_site\check\urls.py", line 2, in <module>
+  File "C:\django\Question_posting_site\check\views.py", line 46, in <module>
+    class Signup(generic.CreateView):
+NameError: name 'generic' is not defined
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\physi\anaconda3\lib\threading.py", line 973, in _bootstrap_inner
+    self.run()
+  File "C:\Users\physi\anaconda3\lib\threading.py", line 910, in run
+    self._target(*self._args, **self._kwargs)
+  File "C:\django\Question_posting_site\venv\site\lib\site-packages\django\utils\autoreload.py", line 72, in wrapper
+    filename = traceback.extract_tb(tb)[-1][0]
+  File "C:\Users\physi\anaconda3\lib\traceback.py", line 72, in extract_tb
+    return StackSummary.extract(walk_tb(tb), limit=limit)
+  File "C:\Users\physi\anaconda3\lib\traceback.py", line 366, in extract
+    f.line
+  File "C:\Users\physi\anaconda3\lib\traceback.py", line 288, in line
+    self._line = linecache.getline(self.filename, self.lineno).strip()
+  File "C:\Users\physi\anaconda3\lib\linecache.py", line 30, in getline
+    lines = getlines(filename, module_globals)
+  File "C:\Users\physi\anaconda3\lib\linecache.py", line 46, in getlines
+    return updatecache(filename, module_globals)
+  File "C:\Users\physi\anaconda3\lib\linecache.py", line 137, in updatecache
+    lines = fp.readlines()
+  File "C:\Users\physi\anaconda3\lib\codecs.py", line 322, in decode
+    (result, consumed) = self._buffer_decode(data, self.errors, final)
+UnicodeDecodeError: 'utf-8' codec can't decode byte 0x83 in position 448: invalid start byte
+C:\Users\physi\anaconda3\Lib\codecs.py changed, reloading.
+Watching for file changes with StatReloader
+Performing system checks...
+
+Exception in thread django-main-thread:
+Traceback (most recent call last):
+  File "C:\django\Question_posting_site\venv\site\lib\site-packages\django\utils\autoreload.py", line 64, in wrapper
+    fn(*args, **kwargs)
+  File "C:\django\Question_posting_site\venv\site\lib\site-packages\django\core\management\commands\runserver.py", line 134, in inner_run
+    self.check(display_num_errors=True)
+  File "C:\django\Question_posting_site\venv\site\lib\site-packages\django\core\management\base.py", line 487, in check
+    all_issues = checks.run_checks(
+  File "C:\django\Question_posting_site\venv\site\lib\site-packages\django\core\checks\registry.py", line 88, in run_checks
+    new_errors = check(app_configs=app_configs, databases=databases)
+  File "C:\django\Question_posting_site\venv\site\lib\site-packages\django\core\checks\urls.py", line 14, in check_url_config
+    return check_resolver(resolver)
+  File "C:\django\Question_posting_site\venv\site\lib\site-packages\django\core\checks\urls.py", line 24, in check_resolver
+    return check_method()
+  File "C:\django\Question_posting_site\venv\site\lib\site-packages\django\urls\resolvers.py", line 480, in check
+    for pattern in self.url_patterns:
+  File "C:\django\Question_posting_site\venv\site\lib\site-packages\django\utils\functional.py", line 49, in __get__
+    res = instance.__dict__[self.name] = self.func(instance)
+  File "C:\django\Question_posting_site\venv\site\lib\site-packages\django\urls\resolvers.py", line 696, in url_patterns
+    patterns = getattr(self.urlconf_module, "urlpatterns", self.urlconf_module)
+  File "C:\django\Question_posting_site\venv\site\lib\site-packages\django\utils\functional.py", line 49, in __get__
+    res = instance.__dict__[self.name] = self.func(instance)
+  File "C:\django\Question_posting_site\venv\site\lib\site-packages\django\urls\resolvers.py", line 689, in urlconf_module
+    return import_module(self.urlconf_name)
+  File "C:\Users\physi\anaconda3\lib\importlib\__init__.py", line 127, in import_module
+    return _bootstrap._gcd_import(name[level:], package, level)
+  File "<frozen importlib._bootstrap>", line 1030, in _gcd_import
+  File "<frozen importlib._bootstrap>", line 1007, in _find_and_load
+  File "<frozen importlib._bootstrap>", line 986, in _find_and_load_unlocked
+  File "<frozen importlib._bootstrap>", line 680, in _load_unlocked
+  File "<frozen importlib._bootstrap_external>", line 850, in exec_module
+  File "<frozen importlib._bootstrap>", line 228, in _call_with_frames_removed
+  File "C:\django\Question_posting_site\config\urls.py", line 7, in <module>
+    path('account/', include('check.urls')), #2/26追加 #ここでURLの一番目を設定する．appならsquare（広場），checkならaccount（認証）に行く！
+  File "C:\django\Question_posting_site\venv\site\lib\site-packages\django\urls\conf.py", line 38, in include
+    urlconf_module = import_module(urlconf_module)
+  File "C:\Users\physi\anaconda3\lib\importlib\__init__.py", line 127, in import_module
+    return _bootstrap._gcd_import(name[level:], package, level)
+  File "<frozen importlib._bootstrap>", line 1030, in _gcd_import
+  File "<frozen importlib._bootstrap>", line 1007, in _find_and_load
+  File "<frozen importlib._bootstrap>", line 986, in _find_and_load_unlocked
+  File "<frozen importlib._bootstrap>", line 680, in _load_unlocked
+  File "<frozen importlib._bootstrap_external>", line 850, in exec_module
+  File "<frozen importlib._bootstrap>", line 228, in _call_with_frames_removed
+  File "C:\django\Question_posting_site\check\urls.py", line 2, in <module>
+  File "C:\django\Question_posting_site\check\views.py", line 46, in <module>
+    class Signup(generic.CreateView):
+NameError: name 'generic' is not defined
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\physi\anaconda3\lib\threading.py", line 973, in _bootstrap_inner
+    self.run()
+  File "C:\Users\physi\anaconda3\lib\threading.py", line 910, in run
+    self._target(*self._args, **self._kwargs)
+  File "C:\django\Question_posting_site\venv\site\lib\site-packages\django\utils\autoreload.py", line 72, in wrapper
+    filename = traceback.extract_tb(tb)[-1][0]
+  File "C:\Users\physi\anaconda3\lib\traceback.py", line 72, in extract_tb
+    return StackSummary.extract(walk_tb(tb), limit=limit)
+  File "C:\Users\physi\anaconda3\lib\traceback.py", line 366, in extract
+    f.line
+  File "C:\Users\physi\anaconda3\lib\traceback.py", line 288, in line
+    self._line = linecache.getline(self.filename, self.lineno).strip()
+  File "C:\Users\physi\anaconda3\lib\linecache.py", line 30, in getline
+    lines = getlines(filename, module_globals)
+  File "C:\Users\physi\anaconda3\lib\linecache.py", line 46, in getlines
+    return updatecache(filename, module_globals)
+  File "C:\Users\physi\anaconda3\lib\linecache.py", line 137, in updatecache
+    lines = fp.readlines()
+  File "C:\Users\physi\anaconda3\lib\codecs.py", line 322, in decode
+    (result, consumed) = self._buffer_decode(data, self.errors, final)
+UnicodeDecodeError: 'utf-8' codec can't decode byte 0x83 in position 448: invalid start byte
+(site) (base) PS C:\django\Question_posting_site> python manage.py runserver
+Watching for file changes with StatReloader
+Performing system checks...
+
+Exception in thread django-main-thread:
+Traceback (most recent call last):
+  File "C:\django\Question_posting_site\venv\site\lib\site-packages\django\utils\autoreload.py", line 64, in wrapper
+    fn(*args, **kwargs)
+  File "C:\django\Question_posting_site\venv\site\lib\site-packages\django\core\management\commands\runserver.py", line 134, in inner_run
+    self.check(display_num_errors=True)
+  File "C:\django\Question_posting_site\venv\site\lib\site-packages\django\core\management\base.py", line 487, in check
+    all_issues = checks.run_checks(
+  File "C:\django\Question_posting_site\venv\site\lib\site-packages\django\core\checks\registry.py", line 88, in run_checks
+    new_errors = check(app_configs=app_configs, databases=databases)
+  File "C:\django\Question_posting_site\venv\site\lib\site-packages\django\core\checks\urls.py", line 14, in check_url_config
+    return check_resolver(resolver)
+  File "C:\django\Question_posting_site\venv\site\lib\site-packages\django\core\checks\urls.py", line 24, in check_resolver
+    return check_method()
+  File "C:\django\Question_posting_site\venv\site\lib\site-packages\django\urls\resolvers.py", line 480, in check
+    for pattern in self.url_patterns:
+  File "C:\django\Question_posting_site\venv\site\lib\site-packages\django\utils\functional.py", line 49, in __get__
+    res = instance.__dict__[self.name] = self.func(instance)
+  File "C:\django\Question_posting_site\venv\site\lib\site-packages\django\urls\resolvers.py", line 696, in url_patterns
+    patterns = getattr(self.urlconf_module, "urlpatterns", self.urlconf_module)
+  File "C:\django\Question_posting_site\venv\site\lib\site-packages\django\utils\functional.py", line 49, in __get__
+    res = instance.__dict__[self.name] = self.func(instance)
+  File "C:\django\Question_posting_site\venv\site\lib\site-packages\django\urls\resolvers.py", line 689, in urlconf_module
+    return import_module(self.urlconf_name)
+  File "C:\Users\physi\anaconda3\lib\importlib\__init__.py", line 127, in import_module
+    return _bootstrap._gcd_import(name[level:], package, level)
+  File "<frozen importlib._bootstrap>", line 1030, in _gcd_import
+  File "<frozen importlib._bootstrap>", line 1007, in _find_and_load
+  File "<frozen importlib._bootstrap>", line 986, in _find_and_load_unlocked
+  File "<frozen importlib._bootstrap>", line 680, in _load_unlocked
+  File "<frozen importlib._bootstrap_external>", line 850, in exec_module
+  File "<frozen importlib._bootstrap>", line 228, in _call_with_frames_removed
+  File "C:\django\Question_posting_site\config\urls.py", line 7, in <module>
+    path('account/', include('check.urls')), #2/26追加 #ここでURLの一番目を設定する．appならsquare（広場），checkならaccount（認証）に行く！
+  File "C:\django\Question_posting_site\venv\site\lib\site-packages\django\urls\conf.py", line 38, in include
+    urlconf_module = import_module(urlconf_module)
+  File "C:\Users\physi\anaconda3\lib\importlib\__init__.py", line 127, in import_module
+    return _bootstrap._gcd_import(name[level:], package, level)
+  File "<frozen importlib._bootstrap>", line 1030, in _gcd_import
+  File "<frozen importlib._bootstrap>", line 1007, in _find_and_load
+  File "<frozen importlib._bootstrap>", line 986, in _find_and_load_unlocked
+  File "<frozen importlib._bootstrap>", line 680, in _load_unlocked
+  File "<frozen importlib._bootstrap_external>", line 850, in exec_module
+  File "<frozen importlib._bootstrap>", line 228, in _call_with_frames_removed
+  File "C:\django\Question_posting_site\check\urls.py", line 2, in <module>
+  File "C:\django\Question_posting_site\check\views.py", line 46, in <module>
+    class Signup(generic.CreateView):
+NameError: name 'generic' is not defined
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\physi\anaconda3\lib\threading.py", line 973, in _bootstrap_inner
+    self.run()
+  File "C:\Users\physi\anaconda3\lib\threading.py", line 910, in run
+    self._target(*self._args, **self._kwargs)
+  File "C:\django\Question_posting_site\venv\site\lib\site-packages\django\utils\autoreload.py", line 72, in wrapper
+    filename = traceback.extract_tb(tb)[-1][0]
+  File "C:\Users\physi\anaconda3\lib\traceback.py", line 72, in extract_tb
+    return StackSummary.extract(walk_tb(tb), limit=limit)
+  File "C:\Users\physi\anaconda3\lib\traceback.py", line 366, in extract
+    f.line
+  File "C:\Users\physi\anaconda3\lib\traceback.py", line 288, in line
+    self._line = linecache.getline(self.filename, self.lineno).strip()
+  File "C:\Users\physi\anaconda3\lib\linecache.py", line 30, in getline
+    lines = getlines(filename, module_globals)
+  File "C:\Users\physi\anaconda3\lib\linecache.py", line 46, in getlines
+    return updatecache(filename, module_globals)
+  File "C:\Users\physi\anaconda3\lib\linecache.py", line 137, in updatecache
+    lines = fp.readlines()
+  File "C:\Users\physi\anaconda3\lib\codecs.py", line 322, in decode
+    (result, consumed) = self._buffer_decode(data, self.errors, final)
+UnicodeDecodeError: 'utf-8' codec can't decode byte 0x83 in position 448: invalid start byte
+C:\Users\physi\anaconda3\Lib\codecs.py changed, reloading.
+Watching for file changes with StatReloader
+Performing system checks...
+
+Exception in thread django-main-thread:
+Traceback (most recent call last):
+  File "C:\django\Question_posting_site\venv\site\lib\site-packages\django\utils\autoreload.py", line 64, in wrapper
+    fn(*args, **kwargs)
+  File "C:\django\Question_posting_site\venv\site\lib\site-packages\django\core\management\commands\runserver.py", line 134, in inner_run
+    self.check(display_num_errors=True)
+  File "C:\django\Question_posting_site\venv\site\lib\site-packages\django\core\management\base.py", line 487, in check
+    all_issues = checks.run_checks(
+  File "C:\django\Question_posting_site\venv\site\lib\site-packages\django\core\checks\registry.py", line 88, in run_checks
+    new_errors = check(app_configs=app_configs, databases=databases)
+  File "C:\django\Question_posting_site\venv\site\lib\site-packages\django\core\checks\urls.py", line 14, in check_url_config
+    return check_resolver(resolver)
+  File "C:\django\Question_posting_site\venv\site\lib\site-packages\django\core\checks\urls.py", line 24, in check_resolver
+    return check_method()
+  File "C:\django\Question_posting_site\venv\site\lib\site-packages\django\urls\resolvers.py", line 480, in check
+    for pattern in self.url_patterns:
+  File "C:\django\Question_posting_site\venv\site\lib\site-packages\django\utils\functional.py", line 49, in __get__
+    res = instance.__dict__[self.name] = self.func(instance)
+  File "C:\django\Question_posting_site\venv\site\lib\site-packages\django\urls\resolvers.py", line 696, in url_patterns
+    patterns = getattr(self.urlconf_module, "urlpatterns", self.urlconf_module)
+  File "C:\django\Question_posting_site\venv\site\lib\site-packages\django\utils\functional.py", line 49, in __get__
+    res = instance.__dict__[self.name] = self.func(instance)
+  File "C:\django\Question_posting_site\venv\site\lib\site-packages\django\urls\resolvers.py", line 689, in urlconf_module
+    return import_module(self.urlconf_name)
+  File "C:\Users\physi\anaconda3\lib\importlib\__init__.py", line 127, in import_module
+    return _bootstrap._gcd_import(name[level:], package, level)
+  File "<frozen importlib._bootstrap>", line 1030, in _gcd_import
+  File "<frozen importlib._bootstrap>", line 1007, in _find_and_load
+  File "<frozen importlib._bootstrap>", line 986, in _find_and_load_unlocked
+  File "<frozen importlib._bootstrap>", line 680, in _load_unlocked
+  File "<frozen importlib._bootstrap_external>", line 850, in exec_module
+  File "<frozen importlib._bootstrap>", line 228, in _call_with_frames_removed
+  File "C:\django\Question_posting_site\config\urls.py", line 7, in <module>
+    path('account/', include('check.urls')), #2/26追加 #ここでURLの一番目を設定する．appならsquare（広場），checkならaccount（認証）に行く！
+  File "C:\django\Question_posting_site\venv\site\lib\site-packages\django\urls\conf.py", line 38, in include
+    urlconf_module = import_module(urlconf_module)
+  File "C:\Users\physi\anaconda3\lib\importlib\__init__.py", line 127, in import_module
+    return _bootstrap._gcd_import(name[level:], package, level)
+  File "<frozen importlib._bootstrap>", line 1030, in _gcd_import
+  File "<frozen importlib._bootstrap>", line 1007, in _find_and_load
+  File "<frozen importlib._bootstrap>", line 986, in _find_and_load_unlocked
+  File "<frozen importlib._bootstrap>", line 680, in _load_unlocked
+  File "<frozen importlib._bootstrap_external>", line 850, in exec_module
+  File "<frozen importlib._bootstrap>", line 228, in _call_with_frames_removed
+  File "C:\django\Question_posting_site\check\urls.py", line 2, in <module>
+  File "C:\django\Question_posting_site\check\views.py", line 46, in <module>
+    class Signup(generic.CreateView):
+NameError: name 'generic' is not defined
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\physi\anaconda3\lib\threading.py", line 973, in _bootstrap_inner
+    self.run()
+  File "C:\Users\physi\anaconda3\lib\threading.py", line 910, in run
+    self._target(*self._args, **self._kwargs)
+  File "C:\django\Question_posting_site\venv\site\lib\site-packages\django\utils\autoreload.py", line 72, in wrapper
+    filename = traceback.extract_tb(tb)[-1][0]
+  File "C:\Users\physi\anaconda3\lib\traceback.py", line 72, in extract_tb
+    return StackSummary.extract(walk_tb(tb), limit=limit)
+  File "C:\Users\physi\anaconda3\lib\traceback.py", line 366, in extract
+    f.line
+  File "C:\Users\physi\anaconda3\lib\traceback.py", line 288, in line
+    self._line = linecache.getline(self.filename, self.lineno).strip()
+  File "C:\Users\physi\anaconda3\lib\linecache.py", line 30, in getline
+    lines = getlines(filename, module_globals)
+  File "C:\Users\physi\anaconda3\lib\linecache.py", line 46, in getlines
+    return updatecache(filename, module_globals)
+  File "C:\Users\physi\anaconda3\lib\linecache.py", line 137, in updatecache
+    lines = fp.readlines()
+  File "C:\Users\physi\anaconda3\lib\codecs.py", line 322, in decode
+    (result, consumed) = self._buffer_decode(data, self.errors, final)
+UnicodeDecodeError: 'utf-8' codec can't decode byte 0x83 in position 448: invalid start byte
+C:\Users\physi\anaconda3\Lib\codecs.py changed, reloading.
+Fatal Python error: init_import_site: Failed to import the site module
+Python runtime state: initialized
+Traceback (most recent call last):
+  File "C:\Users\physi\anaconda3\lib\site.py", line 589, in <module>
+  File "C:\Users\physi\anaconda3\lib\site.py", line 572, in main
+  File "C:\Users\physi\anaconda3\lib\site.py", line 491, in venv
+  File "C:\Users\physi\anaconda3\lib\codecs.py", line 322, in decode
+TypeError: _codecs.utf_8_decode() takes no keyword arguments
+(site) (base) PS C:\django\Question_posting_site> python manage.py runserver
+Fatal Python error: init_import_site: Failed to import the site module
+Python runtime state: initialized
+Traceback (most recent call last):
+  File "C:\Users\physi\anaconda3\lib\site.py", line 589, in <module>
+  File "C:\Users\physi\anaconda3\lib\site.py", line 572, in main
+  File "C:\Users\physi\anaconda3\lib\site.py", line 491, in venv
+  File "C:\Users\physi\anaconda3\lib\codecs.py", line 322, in decode
+TypeError: _codecs.utf_8_decode() takes no keyword arguments
+(site) (base) PS C:\django\Question_posting_site> python manage.py runserver
+Fatal Python error: init_import_site: Failed to import the site module
+Python runtime state: initialized
+Traceback (most recent call last):
+  File "C:\Users\physi\anaconda3\lib\site.py", line 589, in <module>
+  File "C:\Users\physi\anaconda3\lib\site.py", line 572, in main
+  File "C:\Users\physi\anaconda3\lib\site.py", line 491, in venv
+  File "C:\Users\physi\anaconda3\lib\codecs.py", line 322, in decode
+TypeError: _codecs.utf_8_decode() takes no keyword arguments
+(site) (base) PS C:\django\Question_posting_site> python manage.py runserver
+Fatal Python error: init_import_site: Failed to import the site module
+Python runtime state: initialized
+Traceback (most recent call last):
+  File "C:\Users\physi\anaconda3\lib\site.py", line 589, in <module>
+  File "C:\Users\physi\anaconda3\lib\site.py", line 572, in main
+  File "C:\Users\physi\anaconda3\lib\site.py", line 491, in venv
+  File "C:\Users\physi\anaconda3\lib\codecs.py", line 322, in decode
+TypeError: _codecs.utf_8_decode() takes no keyword arguments
+(site) (base) PS C:\django\Question_posting_site> python manage.py runserver
+Python path configuration:
+  PYTHONHOME = (not set)
+  PYTHONPATH = (not set)
+  program name = 'C:\Users\physi\anaconda3\python.exe'
+  isolated = 0
+  environment = 1
+  user site = 1
+  import site = 1
+  sys._base_executable = 'C:\\Users\\physi\\anaconda3\\python.exe'
+  sys.base_prefix = 'C:\\Users\\physi\\anaconda3'
+  sys.base_exec_prefix = 'C:\\Users\\physi\\anaconda3'
+  sys.platlibdir = 'lib'
+  sys.executable = 'C:\\django\\Question_posting_site\\venv\\site\\Scripts\\python.exe'
+  sys.prefix = 'C:\\Users\\physi\\anaconda3'
+  sys.exec_prefix = 'C:\\Users\\physi\\anaconda3'
+  sys.path = [
+    'C:\\Users\\physi\\anaconda3\\python39.zip',
+    'C:\\Users\\physi\\anaconda3\\DLLs',
+    'C:\\Users\\physi\\anaconda3\\lib',
+    'C:\\Users\\physi\\anaconda3',
+  ]
+Fatal Python error: init_fs_encoding: failed to get the Python codec of the filesystem encoding
+Python runtime state: core initialized
+Traceback (most recent call last):
+  File "C:\Users\physi\anaconda3\lib\encodings\__init__.py", line 98, in search_function
+  File "C:\Users\physi\anaconda3\lib\encodings\utf_8.py", line 15
+    def decode(input='default', errors):
+                                      ^
+SyntaxError: non-default argument follows default argument
+(site) (base) PS C:\django\Question_posting_site> python manage.py runserver
+Fatal Python error: init_import_site: Failed to import the site module
+Python runtime state: initialized
+Traceback (most recent call last):
+  File "C:\Users\physi\anaconda3\lib\site.py", line 589, in <module>
+  File "C:\Users\physi\anaconda3\lib\site.py", line 572, in main
+  File "C:\Users\physi\anaconda3\lib\site.py", line 491, in venv
+  File "C:\Users\physi\anaconda3\lib\codecs.py", line 322, in decode
+TypeError: _codecs.utf_8_decode() takes no keyword arguments
+(site) (base) PS C:\django\Question_posting_site> python manage.py runserver
+Fatal Python error: init_import_site: Failed to import the site module
+Python runtime state: initialized
+Traceback (most recent call last):
+  File "C:\Users\physi\anaconda3\lib\site.py", line 589, in <module>
+  File "C:\Users\physi\anaconda3\lib\site.py", line 572, in main
+  File "C:\Users\physi\anaconda3\lib\site.py", line 491, in venv
+  File "C:\Users\physi\anaconda3\lib\codecs.py", line 322, in decode
+TypeError: _codecs.utf_8_decode() takes no keyword arguments
+(site) (base) PS C:\django\Question_posting_site> python manage.py runserver
+Python path configuration:
+  PYTHONHOME = (not set)
+  PYTHONPATH = (not set)
+  program name = 'C:\Users\physi\anaconda3\python.exe'
+  isolated = 0
+  environment = 1
+  user site = 1
+  import site = 1
+  sys._base_executable = 'C:\\Users\\physi\\anaconda3\\python.exe'
+  sys.base_prefix = 'C:\\Users\\physi\\anaconda3'
+  sys.base_exec_prefix = 'C:\\Users\\physi\\anaconda3'
+  sys.platlibdir = 'lib'
+  sys.executable = 'C:\\django\\Question_posting_site\\venv\\site\\Scripts\\python.exe'
+  sys.prefix = 'C:\\Users\\physi\\anaconda3'
+  sys.exec_prefix = 'C:\\Users\\physi\\anaconda3'
+  sys.path = [
+    'C:\\Users\\physi\\anaconda3\\python39.zip',
+    'C:\\Users\\physi\\anaconda3\\DLLs',
+    'C:\\Users\\physi\\anaconda3\\lib',
+    'C:\\Users\\physi\\anaconda3',
+  ]
+Fatal Python error: init_fs_encoding: failed to get the Python codec of the filesystem encoding
+Python runtime state: core initialized
+Traceback (most recent call last):
+  File "C:\Users\physi\anaconda3\lib\encodings\__init__.py", line 98, in search_function
+  File "C:\Users\physi\anaconda3\lib\encodings\utf_8.py", line 15
+    def decode(input,'strict'):
+                     ^
+SyntaxError: invalid syntax
+(site) (base) PS C:\django\Question_posting_site> python manage.py runserver
+Fatal Python error: init_import_site: Failed to import the site module
+Python runtime state: initialized
+Traceback (most recent call last):
+  File "C:\Users\physi\anaconda3\lib\site.py", line 589, in <module>
+  File "C:\Users\physi\anaconda3\lib\site.py", line 572, in main
+  File "C:\Users\physi\anaconda3\lib\site.py", line 491, in venv
+  File "C:\Users\physi\anaconda3\lib\codecs.py", line 322, in decode
+TypeError: _codecs.utf_8_decode() takes no keyword arguments
+(site) (base) PS C:\django\Question_posting_site> python mnage.py runserver
+Fatal Python error: init_import_site: Failed to import the site module
+Python runtime state: initialized
+Traceback (most recent call last):
+  File "C:\Users\physi\anaconda3\lib\site.py", line 589, in <module>
+  File "C:\Users\physi\anaconda3\lib\site.py", line 572, in main
+  File "C:\Users\physi\anaconda3\lib\site.py", line 491, in venv
+  File "C:\Users\physi\anaconda3\lib\codecs.py", line 322, in decode
+TypeError: _codecs.utf_8_decode() takes no keyword arguments
+(site) (base) PS C:\django\Question_posting_site> python manage.py runserver
+Fatal Python error: init_import_site: Failed to import the site module
+Python runtime state: initialized
+Traceback (most recent call last):
+  File "C:\Users\physi\anaconda3\lib\site.py", line 589, in <module>
+  File "C:\Users\physi\anaconda3\lib\site.py", line 572, in main
+  File "C:\Users\physi\anaconda3\lib\site.py", line 491, in venv
+  File "C:\Users\physi\anaconda3\lib\codecs.py", line 322, in decode
+TypeError: _codecs.utf_8_decode() takes no keyword arguments
+(site) (base) PS C:\django\Question_posting_site> python manage.py runserver
+Fatal Python error: init_import_site: Failed to import the site module
+Python runtime state: initialized
+Traceback (most recent call last):
+  File "C:\Users\physi\anaconda3\lib\site.py", line 589, in <module>
+  File "C:\Users\physi\anaconda3\lib\site.py", line 572, in main
+  File "C:\Users\physi\anaconda3\lib\site.py", line 491, in venv
+  File "C:\Users\physi\anaconda3\lib\codecs.py", line 322, in decode
+TypeError: _codecs.utf_8_decode() takes no keyword arguments
+(site) (base) PS C:\django\Question_posting_site> python manage.py runserver
+Fatal Python error: init_import_site: Failed to import the site module
+Python runtime state: initialized
+Traceback (most recent call last):
+  File "C:\Users\physi\anaconda3\lib\site.py", line 589, in <module>
+  File "C:\Users\physi\anaconda3\lib\site.py", line 572, in main
+  File "C:\Users\physi\anaconda3\lib\site.py", line 491, in venv
+  File "C:\Users\physi\anaconda3\lib\codecs.py", line 322, in decode
+TypeError: _codecs.utf_8_decode() takes no keyword arguments
+(site) (base) PS C:\django\Question_posting_site> python manage.py runserver
+Fatal Python error: init_import_site: Failed to import the site module
+Python runtime state: initialized
+Traceback (most recent call last):
+  File "C:\Users\physi\anaconda3\lib\site.py", line 589, in <module>
+  File "C:\Users\physi\anaconda3\lib\site.py", line 572, in main
+  File "C:\Users\physi\anaconda3\lib\site.py", line 491, in venv
+  File "C:\Users\physi\anaconda3\lib\codecs.py", line 322, in decode
+TypeError: _codecs.utf_8_decode() takes no keyword arguments
+(site) (base) PS C:\django\Question_posting_site> python manage.py runserver
+Watching for file changes with StatReloader
+Performing system checks...
+
+Exception in thread django-main-thread:
+Traceback (most recent call last):
+  File "C:\django\Question_posting_site\venv\site\lib\site-packages\django\utils\autoreload.py", line 64, in wrapper
+    fn(*args, **kwargs)
+  File "C:\django\Question_posting_site\venv\site\lib\site-packages\django\core\management\commands\runserver.py", line 134, in inner_run
+    self.check(display_num_errors=True)
+  File "C:\django\Question_posting_site\venv\site\lib\site-packages\django\core\management\base.py", line 487, in check
+    all_issues = checks.run_checks(
+  File "C:\django\Question_posting_site\venv\site\lib\site-packages\django\core\checks\registry.py", line 88, in run_checks
+    new_errors = check(app_configs=app_configs, databases=databases)
+  File "C:\django\Question_posting_site\venv\site\lib\site-packages\django\core\checks\urls.py", line 14, in check_url_config
+    return check_resolver(resolver)
+  File "C:\django\Question_posting_site\venv\site\lib\site-packages\django\core\checks\urls.py", line 24, in check_resolver
+    return check_method()
+  File "C:\django\Question_posting_site\venv\site\lib\site-packages\django\urls\resolvers.py", line 480, in check
+    for pattern in self.url_patterns:
+  File "C:\django\Question_posting_site\venv\site\lib\site-packages\django\utils\functional.py", line 49, in __get__
+    res = instance.__dict__[self.name] = self.func(instance)
+  File "C:\django\Question_posting_site\venv\site\lib\site-packages\django\urls\resolvers.py", line 696, in url_patterns
+    patterns = getattr(self.urlconf_module, "urlpatterns", self.urlconf_module)
+  File "C:\django\Question_posting_site\venv\site\lib\site-packages\django\utils\functional.py", line 49, in __get__
+    res = instance.__dict__[self.name] = self.func(instance)
+  File "C:\django\Question_posting_site\venv\site\lib\site-packages\django\urls\resolvers.py", line 689, in urlconf_module
+    return import_module(self.urlconf_name)
+  File "C:\Users\physi\anaconda3\lib\importlib\__init__.py", line 127, in import_module
+    return _bootstrap._gcd_import(name[level:], package, level)
+  File "<frozen importlib._bootstrap>", line 1030, in _gcd_import
+  File "<frozen importlib._bootstrap>", line 1007, in _find_and_load
+  File "<frozen importlib._bootstrap>", line 986, in _find_and_load_unlocked
+  File "<frozen importlib._bootstrap>", line 680, in _load_unlocked
+  File "<frozen importlib._bootstrap_external>", line 850, in exec_module
+  File "<frozen importlib._bootstrap>", line 228, in _call_with_frames_removed
+  File "C:\django\Question_posting_site\config\urls.py", line 7, in <module>
+    path('account/', include('check.urls')), #2/26追加 #ここでURLの一番目を設定する．appならsquare（広場），checkならaccount（認証）に行く！
+  File "C:\django\Question_posting_site\venv\site\lib\site-packages\django\urls\conf.py", line 38, in include
+    urlconf_module = import_module(urlconf_module)
+  File "C:\Users\physi\anaconda3\lib\importlib\__init__.py", line 127, in import_module
+    return _bootstrap._gcd_import(name[level:], package, level)
+  File "<frozen importlib._bootstrap>", line 1030, in _gcd_import
+  File "<frozen importlib._bootstrap>", line 1007, in _find_and_load
+  File "<frozen importlib._bootstrap>", line 986, in _find_and_load_unlocked
+  File "<frozen importlib._bootstrap>", line 680, in _load_unlocked
+  File "<frozen importlib._bootstrap_external>", line 850, in exec_module
+  File "<frozen importlib._bootstrap>", line 228, in _call_with_frames_removed
+  File "C:\django\Question_posting_site\check\urls.py", line 2, in <module>
+  File "C:\django\Question_posting_site\check\views.py", line 46, in <module>
+    class Signup(generic.CreateView):
+NameError: name 'generic' is not defined
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\physi\anaconda3\lib\threading.py", line 973, in _bootstrap_inner
+    self.run()
+  File "C:\Users\physi\anaconda3\lib\threading.py", line 910, in run
+    self._target(*self._args, **self._kwargs)
+  File "C:\django\Question_posting_site\venv\site\lib\site-packages\django\utils\autoreload.py", line 72, in wrapper
+    filename = traceback.extract_tb(tb)[-1][0]
+  File "C:\Users\physi\anaconda3\lib\traceback.py", line 72, in extract_tb
+    return StackSummary.extract(walk_tb(tb), limit=limit)
+  File "C:\Users\physi\anaconda3\lib\traceback.py", line 366, in extract
+    f.line
+  File "C:\Users\physi\anaconda3\lib\traceback.py", line 288, in line
+    self._line = linecache.getline(self.filename, self.lineno).strip()
+  File "C:\Users\physi\anaconda3\lib\linecache.py", line 30, in getline
+    lines = getlines(filename, module_globals)
+  File "C:\Users\physi\anaconda3\lib\linecache.py", line 46, in getlines
+    return updatecache(filename, module_globals)
+  File "C:\Users\physi\anaconda3\lib\linecache.py", line 137, in updatecache
+    lines = fp.readlines()
+  File "C:\Users\physi\anaconda3\lib\codecs.py", line 322, in decode
+    (result, consumed) = self._buffer_decode(data, self.errors, final)
+UnicodeDecodeError: 'utf-8' codec can't decode byte 0x83 in position 448: invalid start byte
+C:\Users\physi\anaconda3\Lib\codecs.py changed, reloading.
+Fatal Python error: init_import_site: Failed to import the site module
+Python runtime state: initialized
+Traceback (most recent call last):
+  File "C:\Users\physi\anaconda3\lib\site.py", line 589, in <module>
+  File "C:\Users\physi\anaconda3\lib\site.py", line 572, in main
+  File "C:\Users\physi\anaconda3\lib\site.py", line 491, in venv
+  File "C:\Users\physi\anaconda3\lib\codecs.py", line 322, in decode
+TypeError: _codecs.utf_8_decode() takes no keyword arguments
+(site) (base) PS C:\django\Question_posting_site> python manage.py runserver
+Fatal Python error: init_import_site: Failed to import the site module
+Python runtime state: initialized
+Traceback (most recent call last):
+  File "C:\Users\physi\anaconda3\lib\site.py", line 589, in <module>
+  File "C:\Users\physi\anaconda3\lib\site.py", line 572, in main
+  File "C:\Users\physi\anaconda3\lib\site.py", line 491, in venv
+  File "C:\Users\physi\anaconda3\lib\codecs.py", line 322, in decode
+TypeError: _codecs.utf_8_decode() takes no keyword arguments
+(site) (base) PS C:\django\Question_posting_site> python
+Fatal Python error: init_import_site: Failed to import the site module
+Python runtime state: initialized
+Traceback (most recent call last):
+  File "C:\Users\physi\anaconda3\lib\site.py", line 589, in <module>
+  File "C:\Users\physi\anaconda3\lib\site.py", line 572, in main
+  File "C:\Users\physi\anaconda3\lib\site.py", line 491, in venv
+  File "C:\Users\physi\anaconda3\lib\codecs.py", line 322, in decode
+TypeError: _codecs.utf_8_decode() takes no keyword arguments
+(site) (base) PS C:\django\Question_posting_site> ^C
+(site) (base) PS C:\django\Question_posting_site> python manage.py runserver
+Fatal Python error: init_import_site: Failed to import the site module
+Python runtime state: initialized
+Traceback (most recent call last):
+  File "C:\Users\physi\anaconda3\lib\site.py", line 589, in <module>
+  File "C:\Users\physi\anaconda3\lib\site.py", line 572, in main
+  File "C:\Users\physi\anaconda3\lib\site.py", line 491, in venv
+  File "C:\Users\physi\anaconda3\lib\codecs.py", line 322, in decode
+TypeError: _codecs.utf_8_decode() takes no keyword arguments
+(site) (base) PS C:\django\Question_posting_site> python manage.py runserver
+Fatal Python error: init_import_site: Failed to import the site module
+Python runtime state: initialized
+Traceback (most recent call last):
+  File "C:\Users\physi\anaconda3\lib\site.py", line 589, in <module>
+  File "C:\Users\physi\anaconda3\lib\site.py", line 572, in main
+  File "C:\Users\physi\anaconda3\lib\site.py", line 491, in venv
+  File "C:\Users\physi\anaconda3\lib\codecs.py", line 322, in decode
+TypeError: _codecs.utf_8_decode() takes no keyword arguments
+(site) (base) PS C:\django\Question_posting_site> python manage.py runserver
+Watching for file changes with StatReloader
+Performing system checks...
+
+Exception in thread django-main-thread:
+Traceback (most recent call last):
+  File "C:\django\Question_posting_site\venv\site\lib\site-packages\django\utils\autoreload.py", line 64, in wrapper
+    fn(*args, **kwargs)
+  File "C:\django\Question_posting_site\venv\site\lib\site-packages\django\core\management\commands\runserver.py", line 134, in inner_run
+    self.check(display_num_errors=True)
+  File "C:\django\Question_posting_site\venv\site\lib\site-packages\django\core\management\base.py", line 487, in check
+    all_issues = checks.run_checks(
+  File "C:\django\Question_posting_site\venv\site\lib\site-packages\django\core\checks\registry.py", line 88, in run_checks
+    new_errors = check(app_configs=app_configs, databases=databases)
+  File "C:\django\Question_posting_site\venv\site\lib\site-packages\django\core\checks\urls.py", line 14, in check_url_config
+    return check_resolver(resolver)
+  File "C:\django\Question_posting_site\venv\site\lib\site-packages\django\core\checks\urls.py", line 24, in check_resolver
+    return check_method()
+  File "C:\django\Question_posting_site\venv\site\lib\site-packages\django\urls\resolvers.py", line 480, in check
+    for pattern in self.url_patterns:
+  File "C:\django\Question_posting_site\venv\site\lib\site-packages\django\utils\functional.py", line 49, in __get__
+    res = instance.__dict__[self.name] = self.func(instance)
+  File "C:\django\Question_posting_site\venv\site\lib\site-packages\django\urls\resolvers.py", line 696, in url_patterns
+    patterns = getattr(self.urlconf_module, "urlpatterns", self.urlconf_module)
+  File "C:\django\Question_posting_site\venv\site\lib\site-packages\django\utils\functional.py", line 49, in __get__
+    res = instance.__dict__[self.name] = self.func(instance)
+  File "C:\django\Question_posting_site\venv\site\lib\site-packages\django\urls\resolvers.py", line 689, in urlconf_module
+    return import_module(self.urlconf_name)
+  File "C:\Users\physi\anaconda3\lib\importlib\__init__.py", line 127, in import_module
+    return _bootstrap._gcd_import(name[level:], package, level)
+  File "<frozen importlib._bootstrap>", line 1030, in _gcd_import
+  File "<frozen importlib._bootstrap>", line 1007, in _find_and_load
+  File "<frozen importlib._bootstrap>", line 986, in _find_and_load_unlocked
+  File "<frozen importlib._bootstrap>", line 680, in _load_unlocked
+  File "<frozen importlib._bootstrap_external>", line 850, in exec_module
+  File "<frozen importlib._bootstrap>", line 228, in _call_with_frames_removed
+  File "C:\django\Question_posting_site\config\urls.py", line 7, in <module>
+    path('account/', include('check.urls')), #2/26追加 #ここでURLの一番目を設定する．appならsquare（広場），checkならaccount（認証）に行く！
+  File "C:\django\Question_posting_site\venv\site\lib\site-packages\django\urls\conf.py", line 38, in include
+    urlconf_module = import_module(urlconf_module)
+  File "C:\Users\physi\anaconda3\lib\importlib\__init__.py", line 127, in import_module
+    return _bootstrap._gcd_import(name[level:], package, level)
+  File "<frozen importlib._bootstrap>", line 1030, in _gcd_import
+  File "<frozen importlib._bootstrap>", line 1007, in _find_and_load
+  File "<frozen importlib._bootstrap>", line 986, in _find_and_load_unlocked
+  File "<frozen importlib._bootstrap>", line 680, in _load_unlocked
+  File "<frozen importlib._bootstrap_external>", line 850, in exec_module
+  File "<frozen importlib._bootstrap>", line 228, in _call_with_frames_removed
+  File "C:\django\Question_posting_site\check\urls.py", line 2, in <module>
+  File "C:\django\Question_posting_site\check\views.py", line 46, in <module>
+    class Signup(generic.CreateView):
+NameError: name 'generic' is not defined
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\physi\anaconda3\lib\threading.py", line 973, in _bootstrap_inner
+    self.run()
+  File "C:\Users\physi\anaconda3\lib\threading.py", line 910, in run
+    self._target(*self._args, **self._kwargs)
+  File "C:\django\Question_posting_site\venv\site\lib\site-packages\django\utils\autoreload.py", line 72, in wrapper
+    filename = traceback.extract_tb(tb)[-1][0]
+  File "C:\Users\physi\anaconda3\lib\traceback.py", line 72, in extract_tb
+    return StackSummary.extract(walk_tb(tb), limit=limit)
+  File "C:\Users\physi\anaconda3\lib\traceback.py", line 366, in extract
+    f.line
+  File "C:\Users\physi\anaconda3\lib\traceback.py", line 288, in line
+    self._line = linecache.getline(self.filename, self.lineno).strip()
+  File "C:\Users\physi\anaconda3\lib\linecache.py", line 30, in getline
+    lines = getlines(filename, module_globals)
+  File "C:\Users\physi\anaconda3\lib\linecache.py", line 46, in getlines
+    return updatecache(filename, module_globals)
+  File "C:\Users\physi\anaconda3\lib\linecache.py", line 137, in updatecache
+    lines = fp.readlines()
+  File "C:\Users\physi\anaconda3\lib\codecs.py", line 322, in decode
+    (result, consumed) = self._buffer_decode(data, self.errors, final)
+UnicodeDecodeError: 'utf-8' codec can't decode byte 0x83 in position 448: invalid start byte
+C:\django\Question_posting_site\check\forms.py changed, reloading.
+Watching for file changes with StatReloader
+Performing system checks...
+
+Exception in thread django-main-thread:
+Traceback (most recent call last):
+  File "C:\django\Question_posting_site\venv\site\lib\site-packages\django\utils\autoreload.py", line 64, in wrapper
+    fn(*args, **kwargs)
+  File "C:\django\Question_posting_site\venv\site\lib\site-packages\django\core\management\commands\runserver.py", line 134, in inner_run
+    self.check(display_num_errors=True)
+  File "C:\django\Question_posting_site\venv\site\lib\site-packages\django\core\management\base.py", line 487, in check
+    all_issues = checks.run_checks(
+  File "C:\django\Question_posting_site\venv\site\lib\site-packages\django\core\checks\registry.py", line 88, in run_checks
+    new_errors = check(app_configs=app_configs, databases=databases)
+  File "C:\django\Question_posting_site\venv\site\lib\site-packages\django\core\checks\urls.py", line 14, in check_url_config
+    return check_resolver(resolver)
+  File "C:\django\Question_posting_site\venv\site\lib\site-packages\django\core\checks\urls.py", line 24, in check_resolver
+    return check_method()
+  File "C:\django\Question_posting_site\venv\site\lib\site-packages\django\urls\resolvers.py", line 480, in check
+    for pattern in self.url_patterns:
+  File "C:\django\Question_posting_site\venv\site\lib\site-packages\django\utils\functional.py", line 49, in __get__
+    res = instance.__dict__[self.name] = self.func(instance)
+  File "C:\django\Question_posting_site\venv\site\lib\site-packages\django\urls\resolvers.py", line 696, in url_patterns
+    patterns = getattr(self.urlconf_module, "urlpatterns", self.urlconf_module)
+  File "C:\django\Question_posting_site\venv\site\lib\site-packages\django\utils\functional.py", line 49, in __get__
+    res = instance.__dict__[self.name] = self.func(instance)
+  File "C:\django\Question_posting_site\venv\site\lib\site-packages\django\urls\resolvers.py", line 689, in urlconf_module
+    return import_module(self.urlconf_name)
+  File "C:\Users\physi\anaconda3\lib\importlib\__init__.py", line 127, in import_module
+    return _bootstrap._gcd_import(name[level:], package, level)
+  File "<frozen importlib._bootstrap>", line 1030, in _gcd_import
+  File "<frozen importlib._bootstrap>", line 1007, in _find_and_load
+  File "<frozen importlib._bootstrap>", line 986, in _find_and_load_unlocked
+  File "<frozen importlib._bootstrap>", line 680, in _load_unlocked
+  File "<frozen importlib._bootstrap_external>", line 850, in exec_module
+  File "<frozen importlib._bootstrap>", line 228, in _call_with_frames_removed
+  File "C:\django\Question_posting_site\config\urls.py", line 7, in <module>
+    path('account/', include('check.urls')), #2/26追加 #ここでURLの一番目を設定する．appならsquare（広場），checkならaccount（認証）に行く！
+  File "C:\django\Question_posting_site\venv\site\lib\site-packages\django\urls\conf.py", line 38, in include
+    urlconf_module = import_module(urlconf_module)
+  File "C:\Users\physi\anaconda3\lib\importlib\__init__.py", line 127, in import_module
+    return _bootstrap._gcd_import(name[level:], package, level)
+  File "<frozen importlib._bootstrap>", line 1030, in _gcd_import
+  File "<frozen importlib._bootstrap>", line 1007, in _find_and_load
+  File "<frozen importlib._bootstrap>", line 986, in _find_and_load_unlocked
+  File "<frozen importlib._bootstrap>", line 680, in _load_unlocked
+  File "<frozen importlib._bootstrap_external>", line 850, in exec_module
+  File "<frozen importlib._bootstrap>", line 228, in _call_with_frames_removed
+  File "C:\django\Question_posting_site\check\urls.py", line 2, in <module>
+  File "C:\django\Question_posting_site\check\views.py", line 46, in <module>
+    class Signup(generic.CreateView):
+NameError: name 'generic' is not defined
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\physi\anaconda3\lib\threading.py", line 973, in _bootstrap_inner
+    self.run()
+  File "C:\Users\physi\anaconda3\lib\threading.py", line 910, in run
+    self._target(*self._args, **self._kwargs)
+  File "C:\django\Question_posting_site\venv\site\lib\site-packages\django\utils\autoreload.py", line 72, in wrapper
+    filename = traceback.extract_tb(tb)[-1][0]
+  File "C:\Users\physi\anaconda3\lib\traceback.py", line 72, in extract_tb
+    return StackSummary.extract(walk_tb(tb), limit=limit)
+  File "C:\Users\physi\anaconda3\lib\traceback.py", line 366, in extract
+    f.line
+  File "C:\Users\physi\anaconda3\lib\traceback.py", line 288, in line
+    self._line = linecache.getline(self.filename, self.lineno).strip()
+  File "C:\Users\physi\anaconda3\lib\linecache.py", line 30, in getline
+    lines = getlines(filename, module_globals)
+  File "C:\Users\physi\anaconda3\lib\linecache.py", line 46, in getlines
+    return updatecache(filename, module_globals)
+  File "C:\Users\physi\anaconda3\lib\linecache.py", line 137, in updatecache
+    lines = fp.readlines()
+  File "C:\Users\physi\anaconda3\lib\codecs.py", line 322, in decode
+    (result, consumed) = self._buffer_decode(data, self.errors, final)
+UnicodeDecodeError: 'utf-8' codec can't decode byte 0x83 in position 448: invalid start byte
+(site) (base) PS C:\django\Question_posting_site> python manage.py runserver
+Watching for file changes with StatReloader
+Performing system checks...
+
+Exception in thread django-main-thread:
+Traceback (most recent call last):
+  File "C:\django\Question_posting_site\venv\site\lib\site-packages\django\utils\autoreload.py", line 64, in wrapper
+    fn(*args, **kwargs)
+  File "C:\django\Question_posting_site\venv\site\lib\site-packages\django\core\management\commands\runserver.py", line 134, in inner_run
+    self.check(display_num_errors=True)
+  File "C:\django\Question_posting_site\venv\site\lib\site-packages\django\core\management\base.py", line 487, in check
+    all_issues = checks.run_checks(
+  File "C:\django\Question_posting_site\venv\site\lib\site-packages\django\core\checks\registry.py", line 88, in run_checks
+    new_errors = check(app_configs=app_configs, databases=databases)
+  File "C:\django\Question_posting_site\venv\site\lib\site-packages\django\core\checks\urls.py", line 14, in check_url_config
+    return check_resolver(resolver)
+  File "C:\django\Question_posting_site\venv\site\lib\site-packages\django\core\checks\urls.py", line 24, in check_resolver
+    return check_method()
+  File "C:\django\Question_posting_site\venv\site\lib\site-packages\django\urls\resolvers.py", line 480, in check
+    for pattern in self.url_patterns:
+  File "C:\django\Question_posting_site\venv\site\lib\site-packages\django\utils\functional.py", line 49, in __get__
+    res = instance.__dict__[self.name] = self.func(instance)
+  File "C:\django\Question_posting_site\venv\site\lib\site-packages\django\urls\resolvers.py", line 696, in url_patterns
+    patterns = getattr(self.urlconf_module, "urlpatterns", self.urlconf_module)
+  File "C:\django\Question_posting_site\venv\site\lib\site-packages\django\utils\functional.py", line 49, in __get__
+    res = instance.__dict__[self.name] = self.func(instance)
+  File "C:\django\Question_posting_site\venv\site\lib\site-packages\django\urls\resolvers.py", line 689, in urlconf_module
+    return import_module(self.urlconf_name)
+  File "C:\Users\physi\anaconda3\lib\importlib\__init__.py", line 127, in import_module
+    return _bootstrap._gcd_import(name[level:], package, level)
+  File "<frozen importlib._bootstrap>", line 1030, in _gcd_import
+  File "<frozen importlib._bootstrap>", line 1007, in _find_and_load
+  File "<frozen importlib._bootstrap>", line 986, in _find_and_load_unlocked
+  File "<frozen importlib._bootstrap>", line 680, in _load_unlocked
+  File "<frozen importlib._bootstrap_external>", line 850, in exec_module
+  File "<frozen importlib._bootstrap>", line 228, in _call_with_frames_removed
+  File "C:\django\Question_posting_site\config\urls.py", line 7, in <module>
+    path('account/', include('check.urls')), #2/26追加 #ここでURLの一番目を設定する．appならsquare（広場），checkならaccount（認証）に行く！
+  File "C:\django\Question_posting_site\venv\site\lib\site-packages\django\urls\conf.py", line 38, in include
+    urlconf_module = import_module(urlconf_module)
+  File "C:\Users\physi\anaconda3\lib\importlib\__init__.py", line 127, in import_module
+    return _bootstrap._gcd_import(name[level:], package, level)
+  File "<frozen importlib._bootstrap>", line 1030, in _gcd_import
+  File "<frozen importlib._bootstrap>", line 1007, in _find_and_load
+  File "<frozen importlib._bootstrap>", line 986, in _find_and_load_unlocked
+  File "<frozen importlib._bootstrap>", line 680, in _load_unlocked
+  File "<frozen importlib._bootstrap_external>", line 850, in exec_module
+  File "<frozen importlib._bootstrap>", line 228, in _call_with_frames_removed
+  File "C:\django\Question_posting_site\check\urls.py", line 2, in <module>
+  File "C:\django\Question_posting_site\check\views.py", line 46, in <module>
+    class Signup(generic.CreateView):
+NameError: name 'generic' is not defined
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\physi\anaconda3\lib\threading.py", line 973, in _bootstrap_inner
+    self.run()
+  File "C:\Users\physi\anaconda3\lib\threading.py", line 910, in run
+    self._target(*self._args, **self._kwargs)
+  File "C:\django\Question_posting_site\venv\site\lib\site-packages\django\utils\autoreload.py", line 72, in wrapper
+    filename = traceback.extract_tb(tb)[-1][0]
+  File "C:\Users\physi\anaconda3\lib\traceback.py", line 72, in extract_tb
+    return StackSummary.extract(walk_tb(tb), limit=limit)
+  File "C:\Users\physi\anaconda3\lib\traceback.py", line 366, in extract
+    f.line
+  File "C:\Users\physi\anaconda3\lib\traceback.py", line 288, in line
+    self._line = linecache.getline(self.filename, self.lineno).strip()
+  File "C:\Users\physi\anaconda3\lib\linecache.py", line 30, in getline
+    lines = getlines(filename, module_globals)
+  File "C:\Users\physi\anaconda3\lib\linecache.py", line 46, in getlines
+    return updatecache(filename, module_globals)
+  File "C:\Users\physi\anaconda3\lib\linecache.py", line 137, in updatecache
+    lines = fp.readlines()
+  File "C:\Users\physi\anaconda3\lib\codecs.py", line 322, in decode
+    (result, consumed) = self._buffer_decode(data, self.errors, final)
+UnicodeDecodeError: 'utf-8' codec can't decode byte 0x83 in position 448: invalid start byte
