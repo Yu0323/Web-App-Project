@@ -43,3 +43,6 @@ MySQLに接続できていなかったため，ローカルホストに接続が
 コメント機能を投稿の詳細ページに実装することに成功
 {% for item in card.comment_set.all %}
 として，card(1側)に紐づけられたcomment(多側)を取り出して表示することがポイントであった
+
+画像が無い時imgタグに何も表示させない方法
+onerror="this.style.display='none'"をオプションに入れる
